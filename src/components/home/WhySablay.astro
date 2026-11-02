@@ -1,0 +1,29 @@
+---
+// Why Sablay: four differentiators
+const points = [
+  { title: 'Niche technology expertise', text: 'Specialists in the areas that matter, not generalists.' },
+  { title: 'Shorter turnaround', text: 'Lean delivery that gets solutions live faster.' },
+  { title: 'Flexible delivery', text: 'Onsite, nearshore or offshore, whichever suits the project.' },
+  { title: 'Top-rated consultants', text: 'Decades of collective experience on every engagement.' },
+];
+---
+
+<section id="why-sablay" class="scroll-mt-20 bg-surface py-section" data-ps="src/components/home/WhySablay.astro:157ocl">
+  <div class="mx-auto max-w-7xl px-gutter" data-ps="src/components/home/WhySablay.astro:lax60e">
+    <h2 class="text-h2 font-bold text-foreground" data-ps="src/components/home/WhySablay.astro:emugj0">Specialists, delivered faster</h2>
+
+    <ul class="mt-12 grid list-none grid-cols-1 gap-10 p-0 sm:grid-cols-2 lg:grid-cols-4">
+      {points.map((point, __psIdx) => (
+        <li class="flex flex-col gap-4" data-ps={`src/components/home/WhySablay.astro:scwfv5-${__psIdx}`}>
+          <span class="flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground" data-ps={`src/components/home/WhySablay.astro:6xhpbj-${__psIdx}`}>
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          </span>
+          <h3 class="font-display text-xl font-semibold text-foreground" data-ps={`src/components/home/WhySablay.astro:f3w3nx-${__psIdx}`}>{point.title}</h3>
+          <p class="text-muted-foreground" data-ps={`src/components/home/WhySablay.astro:d7vetw-${__psIdx}`}>{point.text}</p>
+        </li>
+      ))}
+    </ul>
+
+    <a href="/why-sablay" class="mt-12 inline-block font-semibold text-primary no-underline hover:text-primary-hover" data-ps="src/components/home/WhySablay.astro:czm6t4">See why Sablay →</a>
+  </div>
+</section>

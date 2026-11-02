@@ -1,0 +1,53 @@
+---
+// Site footer: brand, explore and contact columns
+import { SITE } from '@/config/site';
+
+const year = new Date().getFullYear();
+const logoSrc = 'https://pagesmith-cdn.com/01b13cc3/images/Sablay-Logo-a69f04-1536.webp';
+const linkClass = 'text-foreground no-underline hover:text-primary transition-colors';
+---
+
+<footer class="border-t border-border bg-background py-16" data-ps="src/components/Footer.astro:ikmf30">
+  <div class="mx-auto max-w-7xl px-gutter" data-ps="src/components/Footer.astro:p4vf85">
+    <div class="flex flex-col gap-12 md:flex-row md:justify-between" data-ps="src/components/Footer.astro:p4vf86">
+      <div class="max-w-xs" data-ps="src/components/Footer.astro:p4vf87">
+        <img src={logoSrc} alt={SITE.name} width="1536" height="512" loading="lazy" class="h-9 w-auto" data-ps="src/components/Footer.astro:4qdjf5" />
+        <p class="mt-6 text-muted-foreground" data-ps="src/components/Footer.astro:csfaq">Bridging the gap between business and IT, with niche services and solutions delivered with a shorter turnaround time.</p>
+        <ul class="mt-6 flex list-none items-center gap-3 p-0" data-ps="src/components/Footer.astro:soc1">
+          <li data-ps="src/components/Footer.astro:sq28dg"><a href="#" aria-label="LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground no-underline transition-colors hover:border-primary hover:text-primary" data-ps="src/components/Footer.astro:8o2pk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 9h4v11H4z"/><circle cx="6" cy="4.5" r="2"/><path d="M10 9h3.8v1.6c.6-1.1 2-1.9 3.6-1.9 3.1 0 3.6 2 3.6 4.6V20h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V20h-4z"/></svg></a></li>
+          <li data-ps="src/components/Footer.astro:sq28df"><a href="#" aria-label="X" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground no-underline transition-colors hover:border-primary hover:text-primary" data-ps="src/components/Footer.astro:8o2pl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.2 2.3h3.4l-7.4 8.5L23 21.7h-6.8l-5.3-7-6.1 7H1.4l7.9-9.1L1 2.3h7l4.8 6.4z"/></svg></a></li>
+          <li data-ps="src/components/Footer.astro:sq28de"><a href="#" aria-label="Facebook" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground no-underline transition-colors hover:border-primary hover:text-primary" data-ps="src/components/Footer.astro:8o2pm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.2V11H7v4h3v7h4v-7h3l.5-4H14V8.5c0-.3.2-.5.5-.5z"/></svg></a></li>
+          <li data-ps="src/components/Footer.astro:sq28dd"><a href="#" aria-label="Instagram" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground no-underline transition-colors hover:border-primary hover:text-primary" data-ps="src/components/Footer.astro:8o2pn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a></li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-2 gap-12 sm:gap-16" data-ps="src/components/Footer.astro:p4vf88">
+        <div data-ps="src/components/Footer.astro:p4vf89">
+          <h2 class="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground" data-ps="src/components/Footer.astro:w7klou">Explore</h2>
+          <ul class="mt-5 flex list-none flex-col gap-3 p-0">
+            <li data-ps="src/components/Footer.astro:wyji6i"><a href="/services" class={linkClass} data-ps="src/components/Footer.astro:7gqc0e">Services</a></li>
+            <li data-ps="src/components/Footer.astro:wyji6j"><a href="/odoo" class={linkClass} data-ps="src/components/Footer.astro:7gqc0f">Odoo</a></li>
+            <li data-ps="src/components/Footer.astro:wyji6k"><a href="/why-sablay" class={linkClass} data-ps="src/components/Footer.astro:7gqc0g">Why Sablay</a></li>
+            <li data-ps="src/components/Footer.astro:wyji6l"><a href="/about" class={linkClass} data-ps="src/components/Footer.astro:7gqc0h">About</a></li>
+          </ul>
+        </div>
+        <div data-ps="src/components/Footer.astro:p4vf8a">
+          <h2 class="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground" data-ps="src/components/Footer.astro:f0091i">Contact</h2>
+          <ul class="mt-5 flex list-none flex-col gap-3 p-0">
+            <li class="text-foreground" data-ps="src/components/Footer.astro:wyji6m">Brussels, Belgium</li>
+            <li data-ps="src/components/Footer.astro:wyji6n"><a href="mailto:info@sablay.be" class="text-muted-foreground no-underline hover:text-primary transition-colors" data-ps="src/components/Footer.astro:7gqc0i">info@sablay.be</a></li>
+            <li class="pt-2" data-ps="src/components/Footer.astro:wyji79"><a href="/book-a-consultation" class="inline-flex items-center rounded-button bg-cta px-5 py-2.5 text-sm font-semibold text-foreground no-underline transition-colors hover:bg-cta-hover" data-ps="src/components/Footer.astro:7gqc0j">Book a Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-border pt-8 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between" data-ps="src/components/Footer.astro:p4vf8b">
+      <p data-ps="src/components/Footer.astro:csfar">© {year} Sablay. All rights reserved.</p>
+      <ul class="flex list-none flex-wrap gap-x-6 gap-y-2 p-0">
+        <li data-ps="src/components/Footer.astro:sq28dc"><a href="/privacy-policy" class="text-muted-foreground no-underline hover:text-primary transition-colors" data-ps="src/components/Footer.astro:8o2pm">Privacy Policy</a></li>
+        <li data-ps="src/components/Footer.astro:sq28db"><a href="/terms-and-conditions" class="text-muted-foreground no-underline hover:text-primary transition-colors" data-ps="src/components/Footer.astro:8o2pn">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

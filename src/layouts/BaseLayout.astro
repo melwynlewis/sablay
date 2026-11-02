@@ -1,0 +1,89 @@
+---
+import '@/styles/global.css';
+import Navigation from '@/components/Navigation.astro';
+import Footer from '@/components/Footer.astro';
+import SEOHead from '@/components/SEOHead.astro';
+import { SITE } from '@/config/site';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  jsonLd?: Record<string, any>;
+  noIndex?: boolean;
+  canonicalUrl?: string;
+  lang?: string;
+}
+
+const { title, description, image, type, jsonLd, noIndex, canonicalUrl, lang } = Astro.props;
+const htmlLang = lang ?? Astro.currentLocale ?? SITE.lang;
+---
+
+<!DOCTYPE html>
+<html lang={htmlLang}>
+  <head>
+    <link rel="preconnect" href="https://pagesmith-cdn.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="preload" href="/_pagesmith/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/_pagesmith/fonts/outfit-700.woff2" as="font" type="font/woff2" crossorigin />
+    <SEOHead
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      jsonLd={jsonLd}
+      noIndex={noIndex}
+      canonicalUrl={canonicalUrl}
+    />
+    <!-- Mark JS as enabled immediately -->
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+    <body data-ps="src/layouts/BaseLayout.astro:4vj8al">
+      <Navigation />
+      <main data-ps="src/layouts/BaseLayout.astro:yuyoow">
+        <slot />
+      </main>
+      <Footer />
+
+      <!-- Hover effects (CSS only; entrances and scroll motion go through the
+           animation manifest) -->
+      <style is:inline>
+        /* Hover Effects */
+        .hover-lift {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .hover-scale {
+          transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+          transform: scale(1.05);
+        }
+
+        .hover-glow {
+          transition: box-shadow 0.3s ease;
+        }
+
+        .hover-glow:hover {
+          box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 40%, transparent);
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+          .hover-lift,
+          .hover-scale,
+          .hover-glow {
+            transition: none !important;
+            transform: none !important;
+          }
+        }
+      </style>
+    </body>
+  </html>

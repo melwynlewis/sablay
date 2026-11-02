@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageCta from '@/components/PageCta.astro';
+const points = [
+  { title: 'Niche technology expertise', text: 'We focus on specific technologies and problem areas, so you work with people who have done this before.', image: 'https://images.pexels.com/photos/6804068/pexels-photo-6804068.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Developers working together at computers' },
+  { title: 'Shorter turnaround', text: 'Lean teams and clear scoping get solutions live faster, without cutting corners.', image: 'https://images.pexels.com/photos/7693692/pexels-photo-7693692.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Colleagues discussing plans around a table' },
+  { title: 'Decades of collective experience', text: 'Our consultants bring years of hands-on experience across enterprise and small business projects.', image: 'https://images.pexels.com/photos/7212946/pexels-photo-7212946.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'People collaborating in a bright office' },
+  { title: 'Top-rated consultants', text: 'Every engagement is staffed with consultants who have earned strong ratings from their clients.', image: 'https://images.pexels.com/photos/18999302/pexels-photo-18999302.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Professionals taking part in a business presentation' },
+];
+const models = [
+  { title: 'Onsite', text: 'Consultants embedded with your team in Brussels or at your location.' },
+  { title: 'Nearshore', text: 'Teams in nearby time zones for close collaboration and easy overlap.' },
+  { title: 'Offshore', text: 'Cost-effective delivery capacity with clear processes and reporting.' },
+];
+---
+<BaseLayout title="Why Sablay | IT Consulting" description="Learn about Sablay's specialist expertise and flexible delivery models." type="website">
+  <section class="bg-background py-section" data-ps="src/pages/why-sablay.astro:q3x3di"><div class="mx-auto max-w-7xl px-gutter" data-ps="src/pages/why-sablay.astro:fws9jp"><h1 class="text-h1 font-bold" data-ps="src/pages/why-sablay.astro:m5cmoh">Why Sablay</h1><p class="mt-6 max-w-3xl text-lead text-muted-foreground" data-ps="src/pages/why-sablay.astro:acypua">Our mission is to bridge the gap between business and IT with niche services and solutions, delivered with a shorter turnaround time.</p></div></section>
+  <section class="bg-surface py-6 md:py-12" data-ps="src/pages/why-sablay.astro:q3x3dh"><div class="mx-auto max-w-7xl px-gutter" data-ps="src/pages/why-sablay.astro:fws9jq">{points.map((point, index) => <article class="grid items-center gap-8 border-b border-border py-12 md:grid-cols-2 md:gap-14 md:py-14" data-ps="src/pages/why-sablay.astro:f78nba"><div class:list={['min-w-0', index % 2 === 1 && 'md:order-2']} data-ps="src/pages/why-sablay.astro:fws9jr"><h2 class="text-h2 font-bold" data-ps="src/pages/why-sablay.astro:y7ci31">{point.title}</h2><p class="mt-5 text-lead text-muted-foreground" data-ps="src/pages/why-sablay.astro:acypu9">{point.text}</p></div><img src={point.image} alt={point.alt} width="1200" height="800" loading="lazy" class="aspect-[2/1] w-full rounded-image object-cover" data-ps="src/pages/why-sablay.astro:6hpa5g" /></article>)}</div></section>
+  <section class="bg-background py-section" data-ps="src/pages/why-sablay.astro:q3x3dg"><div class="mx-auto max-w-7xl px-gutter" data-ps="src/pages/why-sablay.astro:fws9js"><h2 class="text-h2 font-bold" data-ps="src/pages/why-sablay.astro:y7ci32">Flexible delivery, your way</h2><p class="mt-4 max-w-2xl text-lead text-muted-foreground" data-ps="src/pages/why-sablay.astro:acypu8">Choose the model that fits your project, budget and timeline, or combine them.</p><div class="mt-10 grid gap-6 md:grid-cols-3" data-ps="src/pages/why-sablay.astro:fws9jt">{models.map((model) => <article class="rounded-shape border border-border bg-surface p-8" data-ps="src/pages/why-sablay.astro:f78nbb"><h3 class="text-h3 font-semibold" data-ps="src/pages/why-sablay.astro:jixkvg">{model.title}</h3><p class="mt-3 text-foreground" data-ps="src/pages/why-sablay.astro:acypu7">{model.text}</p></article>)}</div></div></section>
+  <PageCta title="See how we can help" text="Talk to a consultant about your project." />
+</BaseLayout>

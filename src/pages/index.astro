@@ -1,0 +1,32 @@
+---
+import { SITE } from '@/config/site';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import TrustStrip from '@/components/home/TrustStrip.astro';
+import Services from '@/components/home/Services.astro';
+import WhySablay from '@/components/home/WhySablay.astro';
+import WhoWeServe from '@/components/home/WhoWeServe.astro';
+import OdooSpotlight from '@/components/home/OdooSpotlight.astro';
+import ClosingCta from '@/components/home/ClosingCta.astro';
+---
+
+<BaseLayout
+  title={SITE.title}
+  description={SITE.description}
+  type="website"
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE.name,
+    url: new URL(Astro.url.pathname, SITE.url).toString(),
+    address: { '@type': 'PostalAddress', addressLocality: 'Brussels', addressCountry: 'BE' },
+  }}
+>
+  <Hero />
+  <TrustStrip />
+  <Services />
+  <WhySablay />
+  <WhoWeServe />
+  <OdooSpotlight />
+  <ClosingCta />
+</BaseLayout>

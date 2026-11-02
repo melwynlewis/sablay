@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageCta from '@/components/PageCta.astro';
+const services = [
+  { id: 'architecture', title: 'Architecture & Design', short: 'Architecture & Design', text: 'Solution and system architecture that fits your business goals and scales with them.', bullets: ['Solution and enterprise architecture', 'System and integration design', 'Technology roadmaps'], image: 'https://images.pexels.com/photos/6804068/pexels-photo-6804068.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Developers working together at computers' },
+  { id: 'development', title: 'Development', short: 'Development', text: 'Custom software built to specification, from internal tools to full platforms.', bullets: ['Custom application development', 'APIs and integrations', 'Maintenance and enhancement'], image: 'https://images.pexels.com/photos/12902862/pexels-photo-12902862.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Developer working on a laptop' },
+  { id: 'infrastructure', title: 'Infrastructure Support', short: 'Infrastructure Support', text: 'Reliable day-to-day support for your servers, cloud and networks.', bullets: ['Monitoring and support', 'Cloud and hybrid environments', 'Incident response and maintenance'], image: 'https://images.pexels.com/photos/17489160/pexels-photo-17489160.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Illuminated server racks in a data centre' },
+  { id: 'security', title: 'Cyber Security', short: 'Cyber Security', text: 'Assess, harden and monitor to keep your systems and data protected.', bullets: ['Security assessments and audits', 'Hardening and remediation', 'Monitoring and incident response'], image: 'https://images.pexels.com/photos/5483248/pexels-photo-5483248.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Laptop screen displaying cybersecurity information' },
+  { id: 'transformation', title: 'Digital Transformation', short: 'Digital Transformation', text: 'Modernise processes and systems so your teams move faster.', bullets: ['Process and systems assessment', 'Modernisation roadmap', 'Implementation and change support'], image: 'https://images.pexels.com/photos/7693692/pexels-photo-7693692.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Business team reviewing plans together' },
+  { id: 'web-mobile', title: 'Web & Mobile App Development', short: 'Web & Mobile Apps', text: 'Websites and apps designed and built for your customers and teams.', bullets: ['Responsive websites and web apps', 'iOS and Android apps', 'UX and UI design'], image: 'https://images.pexels.com/photos/3850201/pexels-photo-3850201.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Mobile phone and laptop on a workspace' },
+];
+---
+<BaseLayout title="Services | Sablay" description="Explore Sablay's IT consulting, software, infrastructure and security services." type="website">
+  <section class="bg-background py-section" data-ps="src/pages/services.astro:3fuawx">
+    <div class="mx-auto max-w-7xl px-gutter" data-ps="src/pages/services.astro:on4k2c">
+      <h1 class="text-h1 font-bold" data-ps="src/pages/services.astro:hsbw3c">Services</h1>
+      <p class="mt-5 text-lead text-muted-foreground" data-ps="src/pages/services.astro:gtmjuv">Niche IT services and solutions, delivered with a shorter turnaround time.</p>
+      <nav aria-label="Services on this page" class="mt-8 flex flex-wrap gap-3" data-ps="src/pages/services.astro:7hu8g3">
+        {services.map((service) => <a href={`#${service.id}`} class="rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground no-underline hover:border-primary" data-ps="src/pages/services.astro:9pon5q">{service.short}</a>)}
+        <a href="/odoo" class="rounded-full border border-primary px-4 py-2 text-sm font-semibold text-foreground no-underline hover:bg-surface" data-ps="src/pages/services.astro:9pon54">Odoo →</a>
+      </nav>
+    </div>
+  </section>
+  <section class="bg-surface py-6 md:py-12" data-ps="src/pages/services.astro:3fuawy">
+    <div class="mx-auto max-w-7xl px-gutter" data-ps="src/pages/services.astro:on4k2b">
+      {services.map((service, index) => (
+        <article id={service.id} class="grid scroll-mt-24 items-center gap-8 border-b border-border py-12 md:grid-cols-2 md:gap-14 md:py-14" data-ps={`src/pages/services.astro:qa40de-${index}`}>
+          <div class:list={['min-w-0', index % 2 === 1 && 'md:order-2']} data-ps={`src/pages/services.astro:on4k2a-${index}`}>
+            <h2 class="text-h2 font-bold" data-ps={`src/pages/services.astro:33wyvq-${index}`}>{service.title}</h2>
+            <p class="mt-5 text-lead text-muted-foreground" data-ps={`src/pages/services.astro:gtmjuu-${index}`}>{service.text}</p>
+            <ul class="mt-5 list-disc space-y-2 pl-5 text-foreground">{service.bullets.map((bullet) => <li data-ps={`src/pages/services.astro:3uvvdl-${index}`}>{bullet}</li>)}</ul>
+            <a href="/book-a-consultation" class="mt-7 inline-flex rounded-button bg-primary px-6 py-3 font-semibold text-primary-foreground no-underline hover:bg-primary-hover" data-ps={`src/pages/services.astro:9pon53-${index}`}>Discuss this service</a>
+          </div>
+          <img src={service.image} alt={service.alt} width="1200" height="800" loading="lazy" class="aspect-[2/1] w-full rounded-image object-cover md:aspect-[2/1]" data-ps={`src/pages/services.astro:ex27fp-${index}`} />
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="bg-background py-section" data-ps="src/pages/services.astro:3fuawz">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-gutter md:flex-row md:items-center" data-ps="src/pages/services.astro:on4k29">
+      <div data-ps="src/pages/services.astro:on4k28"><h2 class="text-h2 font-bold" data-ps="src/pages/services.astro:33wyvr">Odoo implementation and custom development</h2><p class="mt-3 text-lead text-muted-foreground" data-ps="src/pages/services.astro:gtmjut">Make Odoo work for your business, from setup to custom workflows.</p></div>
+      <a href="/odoo" class="shrink-0 rounded-button border border-primary px-6 py-3 font-semibold text-foreground no-underline hover:bg-surface" data-ps="src/pages/services.astro:9pon52">Explore Odoo →</a>
+    </div>
+  </section>
+  <PageCta title="Not sure which service fits?" text="Tell us what you are trying to achieve and we will recommend the right starting point." />
+</BaseLayout>

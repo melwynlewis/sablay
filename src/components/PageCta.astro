@@ -1,0 +1,11 @@
+---
+interface Props { title: string; text: string; dark?: boolean }
+const { title, text, dark = false } = Astro.props;
+---
+<section class:list={['py-section text-center', dark ? 'bg-dark-background text-dark-foreground' : 'bg-surface text-foreground']} data-ps="src/components/PageCta.astro:voi9g8">
+  <div class="mx-auto max-w-4xl px-gutter" data-ps="src/components/PageCta.astro:bem0mn">
+    <h2 class="text-h2 font-bold" data-ps="src/components/PageCta.astro:4wu18p">{title}</h2>
+    <p class:list={['mt-4 text-lead', dark ? 'text-dark-muted-foreground' : 'text-muted-foreground']} data-ps="src/components/PageCta.astro:ym332o">{text}</p>
+    <a href="/book-a-consultation" class:list={['mt-8 inline-flex items-center justify-center rounded-button px-8 py-4 font-semibold no-underline transition-colors', dark ? 'bg-background text-foreground hover:bg-surface' : 'bg-cta text-foreground hover:bg-cta-hover']} data-ps="src/components/PageCta.astro:yucb3h">Book a Consultation</a>
+  </div>
+</section>

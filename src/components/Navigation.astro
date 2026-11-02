@@ -1,0 +1,72 @@
+---
+// Site header: logo, desktop links and a dialog menu on small screens
+import { SITE } from '@/config/site';
+
+const logoSrc = 'https://pagesmith-cdn.com/01b13cc3/images/Sablay-Logo-a69f04-1536.webp';
+const linkClass = 'text-sm font-medium text-foreground hover:text-primary whitespace-nowrap transition-colors';
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+---
+
+<header class="sticky top-0 z-40 border-b border-border bg-background" data-ps="src/components/Navigation.astro:dt8k86">
+  <div class="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-gutter" data-ps="src/components/Navigation.astro:gqvsdb">
+    <a href="/" class="shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:7vkjs6">
+      <img src={logoSrc} alt={SITE.name} width="1536" height="512" loading="eager" class="h-9 w-auto" data-ps="src/components/Navigation.astro:d4d6a2" />
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main" data-ps="src/components/Navigation.astro:m59h3c">
+      <a href="/services" class={linkClass} aria-current={currentPath === '/services' ? 'page' : undefined} data-ps="src/components/Navigation.astro:7vkjs7">Services</a>
+      <a href="/odoo" class={linkClass} aria-current={currentPath === '/odoo' ? 'page' : undefined} data-ps="src/components/Navigation.astro:7vkjs8">Odoo</a>
+      <a href="/why-sablay" class={linkClass} aria-current={currentPath === '/why-sablay' ? 'page' : undefined} data-ps="src/components/Navigation.astro:7vkjs9">Why Sablay</a>
+      <a href="/about" class={linkClass} aria-current={currentPath === '/about' ? 'page' : undefined} data-ps="src/components/Navigation.astro:7vkjsa">About</a>
+      <a href="/book-a-consultation" class="ml-2 inline-flex items-center rounded-button bg-cta px-5 py-2.5 text-sm font-semibold text-foreground whitespace-nowrap transition-colors hover:bg-cta-hover" data-ps="src/components/Navigation.astro:7vkjsb">Book a Consultation</a>
+    </nav>
+
+    <button id="menu-open" type="button" aria-label="Open menu" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false" class="-mr-3.5 ml-auto inline-flex size-12 shrink-0 cursor-pointer items-center justify-center transition-opacity hover:opacity-70 md:hidden" data-ps="src/components/Navigation.astro:4mv9j">
+      <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"></path></svg>
+    </button>
+  </div>
+</header>
+
+<dialog id="site-menu" aria-label="Menu" class="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-hidden border-0 bg-transparent p-0 backdrop:bg-black/40">
+  <div class="ml-auto flex h-full w-full flex-col overflow-y-auto bg-background px-gutter pb-6 text-foreground sm:max-w-md" data-ps="src/components/Navigation.astro:gqvsdc">
+    <div class="flex min-h-18 flex-none items-center justify-between gap-4" data-ps="src/components/Navigation.astro:gqvsdd">
+      <img src={logoSrc} alt={SITE.name} width="1536" height="512" loading="eager" class="h-9 w-auto" data-ps="src/components/Navigation.astro:d4d6a1" />
+      <button id="menu-close" type="button" aria-label="Close menu" class="-mr-3.5 inline-flex size-12 shrink-0 cursor-pointer items-center justify-center transition-opacity hover:opacity-70" data-ps="src/components/Navigation.astro:4mv9k">
+        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile" data-ps="src/components/Navigation.astro:m59h3b">
+      <ul class="m-0 mt-2 list-none border-t border-border p-0">
+        <li class="border-b border-border" data-ps="src/components/Navigation.astro:2wgnl0"><a href="/services" class="font-display flex min-h-12 items-center py-3.5 text-h3 text-foreground" data-ps="src/components/Navigation.astro:7vkjsc">Services</a></li>
+        <li class="border-b border-border" data-ps="src/components/Navigation.astro:2wgnl1"><a href="/odoo" class="font-display flex min-h-12 items-center py-3.5 text-h3 text-foreground" data-ps="src/components/Navigation.astro:7vkjsd">Odoo</a></li>
+        <li class="border-b border-border" data-ps="src/components/Navigation.astro:2wgnl2"><a href="/why-sablay" class="font-display flex min-h-12 items-center py-3.5 text-h3 text-foreground" data-ps="src/components/Navigation.astro:7vkjse">Why Sablay</a></li>
+        <li class="border-b border-border" data-ps="src/components/Navigation.astro:fy1jfa"><a href="/about" class="font-display flex min-h-12 items-center py-3.5 text-h3 text-foreground" data-ps="src/components/Navigation.astro:7vkjsf">About</a></li>
+      </ul>
+    </nav>
+    <div class="mt-auto pt-7" data-ps="src/components/Navigation.astro:gqvsde">
+      <a href="/book-a-consultation" class="flex min-h-13 w-full items-center justify-center rounded-button bg-cta px-6 py-3 font-semibold text-foreground transition-colors hover:bg-cta-hover" data-ps="src/components/Navigation.astro:kd8n5z">Book a Consultation</a>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  a[aria-current="page"] { font-weight: 700; text-decoration: underline; text-underline-offset: 9px; text-decoration-thickness: 2px; }
+</style>
+
+<script>
+  const menu = document.getElementById('site-menu') as HTMLDialogElement | null;
+  const openButton = document.getElementById('menu-open');
+  const closeButton = document.getElementById('menu-close');
+  const closeMenu = () => menu?.close();
+
+  openButton?.addEventListener('click', () => {
+    menu?.showModal();
+    openButton.setAttribute('aria-expanded', 'true');
+  });
+  closeButton?.addEventListener('click', closeMenu);
+  menu?.addEventListener('click', (event) => {
+    if (event.target === menu) closeMenu();
+  });
+  menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  menu?.addEventListener('close', () => openButton?.setAttribute('aria-expanded', 'false'));
+</script>

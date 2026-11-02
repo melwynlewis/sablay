@@ -1,0 +1,106 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const services = [
+  'Odoo implementation',
+  'Custom development',
+  'Enterprise IT consulting',
+  'Small and mid-size business IT',
+  'Not sure yet',
+];
+
+const fieldClass =
+  'mt-2 block w-full rounded-button border border-border bg-background px-4 py-3 text-base text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30';
+const labelClass = 'block text-sm font-semibold text-foreground';
+---
+
+<BaseLayout
+  title="Book a Consultation | Sablay"
+  description="Book a consultation with a Sablay IT consultant in Brussels. Tell us about your project and we will get back to you."
+  type="website"
+>
+  <section class="bg-surface py-section" data-ps="src/pages/book-a-consultation.astro:bc0001">
+    <div class="mx-auto grid max-w-7xl gap-12 px-gutter lg:grid-cols-2 lg:gap-16" data-ps="src/pages/book-a-consultation.astro:bc0002">
+      <div data-ps="src/pages/book-a-consultation.astro:bc0003">
+        <h1 class="text-h1 font-bold text-foreground" data-ps="src/pages/book-a-consultation.astro:bc0004">Book a consultation</h1>
+        <p class="mt-6 text-lead text-muted-foreground" data-ps="src/pages/book-a-consultation.astro:bc0005">Tell us about your project and a Sablay consultant will get back to you.</p>
+        <div class="mt-10" data-ps="src/pages/book-a-consultation.astro:bc0006">
+          <p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground" data-ps="src/pages/book-a-consultation.astro:bc0007">Sablay</p>
+          <p class="mt-3 text-foreground" data-ps="src/pages/book-a-consultation.astro:bc0008">Brussels, Belgium</p>
+          <a href="mailto:info@sablay.be" class="mt-2 inline-block text-foreground transition-colors hover:text-primary" data-ps="src/pages/book-a-consultation.astro:bc0009">info@sablay.be</a>
+        </div>
+      </div>
+
+      <div data-ps="src/pages/book-a-consultation.astro:bc0010">
+        <div id="consultation-card" class="rounded-shape border border-border bg-background p-6 sm:p-10" data-ps="src/pages/book-a-consultation.astro:bc0011">
+          <form id="consultation-form" action="/contact.php" method="post" data-ps="src/pages/book-a-consultation.astro:bc0012">
+            <div class="grid gap-6 sm:grid-cols-2" data-ps="src/pages/book-a-consultation.astro:bc0013">
+              <div data-ps="src/pages/book-a-consultation.astro:bc0014">
+                <label for="consultation-name" class={labelClass} data-ps="src/pages/book-a-consultation.astro:bc0015">Full name</label>
+                <input id="consultation-name" name="name" type="text" required autocomplete="name" class={fieldClass} data-ps="src/pages/book-a-consultation.astro:bc0016" />
+              </div>
+              <div data-ps="src/pages/book-a-consultation.astro:bc0017">
+                <label for="consultation-email" class={labelClass} data-ps="src/pages/book-a-consultation.astro:bc0018">Work email</label>
+                <input id="consultation-email" name="email" type="email" required autocomplete="email" class={fieldClass} data-ps="src/pages/book-a-consultation.astro:bc0019" />
+              </div>
+              <div data-ps="src/pages/book-a-consultation.astro:bc0020">
+                <label for="consultation-company" class={labelClass} data-ps="src/pages/book-a-consultation.astro:bc0021">Company</label>
+                <input id="consultation-company" name="company" type="text" required autocomplete="organization" class={fieldClass} data-ps="src/pages/book-a-consultation.astro:bc0022" />
+              </div>
+              <div data-ps="src/pages/book-a-consultation.astro:bc0023">
+                <label for="consultation-phone" class={labelClass} data-ps="src/pages/book-a-consultation.astro:bc0024">Phone <span class="font-normal text-muted-foreground" data-ps="src/pages/book-a-consultation.astro:cqyojt">(optional)</span></label>
+                <input id="consultation-phone" name="phone" type="tel" autocomplete="tel" class={fieldClass} data-ps="src/pages/book-a-consultation.astro:bc0025" />
+              </div>
+              <div class="sm:col-span-2" data-ps="src/pages/book-a-consultation.astro:bc0026">
+                <label for="consultation-service" class={labelClass} data-ps="src/pages/book-a-consultation.astro:bc0027">Service of interest</label>
+                <select id="consultation-service" name="service" required class={fieldClass} data-ps="src/pages/book-a-consultation.astro:bc0028">
+                  <option value="" selected disabled>Select a service</option>
+                  {services.map((service) => <option value={service}>{service}</option>)}
+                </select>
+              </div>
+              <div class="sm:col-span-2" data-ps="src/pages/book-a-consultation.astro:bc0029">
+                <label for="consultation-message" class={labelClass} data-ps="src/pages/book-a-consultation.astro:bc0030">How can we help?</label>
+                <textarea id="consultation-message" name="message" rows="5" required class={`${fieldClass} resize-y`} data-ps="src/pages/book-a-consultation.astro:bc0031"></textarea>
+              </div>
+            </div>
+
+            <div class="hidden" aria-hidden="true" data-ps="src/pages/book-a-consultation.astro:bc0032">
+              <label for="consultation-website" data-ps="src/pages/book-a-consultation.astro:eww3dl">Leave this field empty</label>
+              <input id="consultation-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <label class="mt-8 flex items-start gap-3 text-sm text-muted-foreground" data-ps="src/pages/book-a-consultation.astro:bc0033">
+              <input name="consent" type="checkbox" required class="mt-0.5 size-5 shrink-0 accent-[var(--color-primary)]" data-ps="src/pages/book-a-consultation.astro:bc0034" />
+              <span data-ps="src/pages/book-a-consultation.astro:bc0035">I agree to Sablay processing my details to respond to this request, as described in the <a href="/privacy-policy" class="text-foreground underline" data-ps="src/pages/book-a-consultation.astro:djqjy8">Privacy Policy</a>.</span>
+            </label>
+
+            <button type="submit" class="mt-8 w-full rounded-button bg-primary px-6 py-4 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary-hover" data-ps="src/pages/book-a-consultation.astro:bc0036">Send request</button>
+          </form>
+        </div>
+
+        <div id="consultation-success" class="hidden rounded-shape border border-border bg-background p-6 sm:p-10 focus:outline-none" role="status" tabindex="-1" data-ps="src/pages/book-a-consultation.astro:bc0037">
+          <h2 class="text-h2 font-bold text-foreground" data-ps="src/pages/book-a-consultation.astro:bc0038">Thank you, we have your request</h2>
+          <p class="mt-4 text-lead text-muted-foreground" data-ps="src/pages/book-a-consultation.astro:bc0039">A Sablay consultant will be in touch shortly.</p>
+          <a href="/" class="mt-8 inline-block font-semibold text-foreground underline transition-colors hover:text-primary" data-ps="src/pages/book-a-consultation.astro:bc0040">Back to home →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('consultation-form') as HTMLFormElement | null;
+  const card = document.getElementById('consultation-card');
+  const success = document.getElementById('consultation-success');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    card?.classList.add('hidden');
+    success?.classList.remove('hidden');
+    success?.focus();
+  });
+</script>
